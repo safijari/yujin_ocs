@@ -13,7 +13,9 @@ RUN apt install python3-catkin-tools -y
 RUN mkdir -p /catkin_ws/src
 
 RUN cd /catkin_ws/src/ && git clone https://github.com/safijari/yujin_ocs && cd yujin_ocs && git submodule update --init --recursive
-RUN rosdep update && rosdep install -y -r --from-paths . --ignore-src --rosdistro=noetic -y
+RUN echo "yaml file:///catkin_ws/src/yujin_ocs/rosdep.yaml" > /etc/ros/rosdep/sources.list.d/99-custom.list
+RUN rosdep update
+RUN rosdep install -y -r --from-paths /catkin_ws/src/yujin_ocs/yocs_velocity_smoother --ignore-src --rosdistro=noetic
 
 RUN source /opt/ros/noetic/setup.bash \ 
     && cd /catkin_ws/src \
