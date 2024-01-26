@@ -2,3 +2,5 @@ ecl_threads:
   ubuntu: [ros-noetic-ecl-threads]
 base_local_planner:
   ubuntu: [ros-noetic-base-local-planner]
+ecl_formatters:
+  ubuntu: [ros-noetic-ecl-formatters]
