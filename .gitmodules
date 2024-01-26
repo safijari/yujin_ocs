@@ -1,0 +1,3 @@
+[submodule "yocs_msgs"]
+	path = yocs_msgs
+	url = git@github.com:safijari/yocs_msgs.git
